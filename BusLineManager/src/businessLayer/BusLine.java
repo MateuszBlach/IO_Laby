@@ -36,4 +36,7 @@ public class BusLine extends StandardObject{
     public void setTicketPrice(double ticketPrice) {
         this.ticketPrice = ticketPrice;
     }
+    public int getLineNumber() {
+        return lineNumber;
+    }
 }

@@ -1,3 +1,5 @@
+package businessLayer;
+
 import businessLayer.BusLine;
 import businessLayer.User;
 
@@ -11,15 +13,16 @@ public class Application {
     public static List<BusLine> busLines = new ArrayList<>();
     public int loggedUser = -1;
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        addBusLine(new BusLine(1,5.6));
+        addBusLine(new BusLine(2,3.1));
     }
 
     public static void addBusLine(BusLine line){
         busLines.add(line);
     }
-    public static BusLine findBusLine(String lineNumber){
+    public static BusLine findBusLine(int lineNumber) {
         return busLines.stream()
-                .filter(busline -> lineNumber.equals(busline.getLineNumber()))
+                .filter(busline -> lineNumber == busline.getLineNumber())
                 .findAny()
                 .orElse(null);
     }
@@ -34,12 +37,12 @@ public class Application {
                 .orElse(null)
         );
     }
-    public static void updateLine(BusLine line){
+    public static void updateLine(BusLine line){git
         //TODO
     }
-    public static void updateTicketPrice(String lineNumber, double newPrice){
+    public static void updateTicketPrice(int lineNumber, double newPrice){
         busLines.stream()
-                .filter(busline -> lineNumber.equals(busline.getLineNumber()))
+                .filter(busline -> lineNumber == busline.getLineNumber())
                 .findAny()
                 .orElse(null)
                 .setTicketPrice(newPrice);

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BusLine extends StandardObject{
     private List<Station> stations;
-    private int lineNumber;
+    private final int lineNumber;
     private double ticketPrice;
 
     public BusLine(int lineNumber,double ticketPrice){

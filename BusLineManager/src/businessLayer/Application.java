@@ -37,7 +37,7 @@ public class Application {
                 .orElse(null)
         );
     }
-    public static void updateLine(BusLine line){git
+    public static void updateLine(BusLine line){
         //TODO
     }
     public static void updateTicketPrice(int lineNumber, double newPrice){
@@ -64,11 +64,11 @@ public class Application {
         users.add(user);
     }
 
-    public void deleteUser(int ID){
+    public static void deleteUser(int ID){
         users.remove(findUser(ID));
     }
 
-    public User findUser(int ID){
+    public static User findUser(int ID){
         return users.stream()
                 .filter(user -> ID == user.getID())
                 .findAny()
@@ -81,4 +81,6 @@ public class Application {
         int ID = Integer.parseInt(scanner.nextLine());
         User user = findUser(ID);
     }
+
+
 }

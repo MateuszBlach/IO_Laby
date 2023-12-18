@@ -6,6 +6,7 @@ public class StandardObject {
 
 
     protected int ID;
+
     private LocalDateTime timeCreated;
 
     public StandardObject() {
@@ -14,5 +15,8 @@ public class StandardObject {
 
     public int getID() {
         return ID;
+    }
+    public LocalDateTime getTimeCreated() {
+        return timeCreated;
     }
 }

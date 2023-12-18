@@ -11,7 +11,7 @@ public class Administrator extends User {
     }
 
     private void deleteUser(int userID){
-        //dodac kod usuwajacy
+        Application.deleteUser(userID);
     }
 
     private void manageBusLinesTimetables(){
@@ -24,6 +24,7 @@ public class Administrator extends User {
         int lineNumber;
         BusLine busLine;
         double newPrice;
+        int lineID;
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice){
             case 1:
@@ -56,8 +57,14 @@ public class Administrator extends User {
                         }
                         break;
                     case 2:
+                        System.out.println("Podaj ID lini autobusowej");
+                        lineID = Integer.parseInt(scanner.nextLine());
+                        Application.deleteBusLine(lineID);
                         break;
                     case 3:
+                        System.out.println("Podaj numer lini autobusowej");
+                        lineNumber = Integer.parseInt(scanner.nextLine());
+                        Application.findBusLine(lineNumber);
                         break;
                     default:
                         break;

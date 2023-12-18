@@ -3,9 +3,10 @@ package properties;
 public class ApplicationProperties {
     static public int nextAdminID = 0;
     static public int nextPaymentID = 0;
-    static public int nextBuslineID = 0;
+    static public int nextBusLineID = 0;
     static public int nextStationID = 0;
     static public int nextTicketID = 0;
+    static public int nextClientID = 0;
     static public int getNextAdminID(){
         int id = nextAdminID;
         nextAdminID++;
@@ -18,8 +19,8 @@ public class ApplicationProperties {
     }
 
     static public int getNextBuslineID(){
-        int id = nextBuslineID;
-        nextBuslineID++;
+        int id = nextBusLineID;
+        nextBusLineID++;
         return id;
     }
     static public int getNextStationID(){
@@ -30,6 +31,12 @@ public class ApplicationProperties {
     static public int getNextTicketID(){
         int id = nextTicketID;
         nextTicketID++;
+        return id;
+    }
+
+    static public int getNextClientID(){
+        int id = nextClientID;
+        nextClientID++;
         return id;
     }
 

@@ -29,8 +29,13 @@ public class BusLine extends StandardObject{
         this.stations.add(station);
     }
 
-    public void removeStation(Station station){
-        this.stations.remove(station);
+    public void removeStation(String name){
+        for(Station station :stations){
+            if(station.getName().equals(name)){
+                stations.remove(station);
+                break;
+            }
+        }
     }
 
     public void setTicketPrice(double ticketPrice) {

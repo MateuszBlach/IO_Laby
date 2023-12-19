@@ -17,6 +17,7 @@ public class Ticket extends StandardObject{
         this.type = type;
         this.line = line;
         this.payment = payment;
+        this.expirationDate = LocalDateTime.now().plusHours(1);
     }
 
     boolean isValid(){

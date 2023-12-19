@@ -4,6 +4,7 @@ import properties.ApplicationProperties;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Client extends User{
     private List<Ticket> tickets = new ArrayList<>();
@@ -21,12 +22,58 @@ public class Client extends User{
         this.adress = adress;
     }
 
-    public void buyTicket(){
-        //TODO
+    public void buyTicket(Ticket ticket){
+        this.tickets.add(ticket);
     }
 
     public void manageTickets(){
-        //TODO
+        System.out.println("""
+                Wybierz akcje:
+                1. Zakup biletu
+                2. Sprawdzenie statusu posiadanych biletow
+                """);
+        Scanner scanner = new Scanner(System.in);
+        int choice = Integer.parseInt(scanner.nextLine());
+        switch (choice){
+            case 1:
+                System.out.println("Podaj numer lini autobusowej");
+                int lineNumber = Integer.parseInt(scanner.nextLine());
+                BusLine findBus = Application.findBusLine(lineNumber);
+                if(findBus != null){
+                    System.out.println("""
+                            Wybierz typ biletu
+                            1. Normalny
+                            2. Ulgowy
+                            """);
+                    int ticketType = Integer.parseInt(scanner.nextLine());
+                    System.out.println("Podaj numer konta:");
+                    String accountNumber = scanner.nextLine();
+                    Payment payment = new Payment(accountNumber);
+                    String type = "";
+                    switch (ticketType){
+                        case 1:
+                            payment.setPrice(findBus.getTicketPrice());
+                            type = "normalny";
+                            break;
+                        case 2:
+                            payment.setPrice(findBus.getTicketPrice()/2);
+                            type = "ulgowy";
+                            break;
+                        default:
+                            break;
+                    }
+                    payment.pay();
+                    this.buyTicket(new Ticket(type,findBus,payment));
+                }
+                break;
+            case 2:
+                for(Ticket ticket : tickets){
+                    System.out.println(ticket.toString());
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     public List<Ticket> getTickets() {

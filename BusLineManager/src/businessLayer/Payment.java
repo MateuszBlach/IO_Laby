@@ -5,6 +5,10 @@ import properties.ApplicationProperties;
 public class Payment extends StandardObject{
     private String accountNumber;
     private String paymentState;
+
+
+
+    private double price;
     public Payment(String accountNumber){
         super();
         this.accountNumber = accountNumber;
@@ -26,5 +30,17 @@ public class Payment extends StandardObject{
 
     public void setPaymentState(String paymentState) {
         this.paymentState = paymentState;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void pay(){
+        this.paymentState = "paid";
     }
 }

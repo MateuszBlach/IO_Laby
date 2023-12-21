@@ -1,7 +1,7 @@
 package businessLayer;
 
 
-public class User extends StandardObject{
+public abstract class User extends StandardObject{
     private String login;
     private String password;
     private String name;
@@ -46,4 +46,6 @@ public class User extends StandardObject{
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+    public abstract void showMenu();
 }

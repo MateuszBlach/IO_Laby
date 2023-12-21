@@ -16,7 +16,7 @@ public class Client extends User{
     public Client(String login, String password, String name, String surname,
                   String phoneNumber, String city, String adress) {
         super(login, password, name, surname);
-        super.ID = ApplicationProperties.getNextClientID();
+        super.ID = ApplicationProperties.getNextUserID();
         this.phoneNumber = phoneNumber;
         this.city = city;
         this.adress = adress;

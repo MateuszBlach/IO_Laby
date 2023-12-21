@@ -2,9 +2,7 @@ package businessLayer;
 
 import java.time.LocalDateTime;
 
-public class StandardObject {
-
-
+public abstract class StandardObject {
     protected int ID;
 
     private LocalDateTime timeCreated;

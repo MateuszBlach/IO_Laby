@@ -7,13 +7,21 @@ import java.util.Scanner;
 public class Administrator extends User {
     public Administrator(String login, String password, String name, String surname) {
         super(login,password,name,surname);
-        super.ID = ApplicationProperties.getNextAdminID();
+        super.ID = ApplicationProperties.getNextUserID();
     }
 
     private void deleteUser(int userID){
         Application.deleteUser(userID);
     }
 
+    public void showMenu(){
+        System.out.println("""
+                Wybierz glowna akcje:
+                1. Zarządzaj rozkładami jazdy
+                2. Zarządzaj kontami użytkowników
+                0. Wyloguj
+                """);
+    }
     private void manageBusLinesTimetables(){
         System.out.println("""
                 Wybierz akcje:

@@ -105,4 +105,8 @@ public class Client extends User{
         this.adress = adress;
     }
 
+    @Override
+    public void showMenu() {
+        //TODO
+    }
 }

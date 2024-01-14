@@ -40,7 +40,7 @@ public class Application {
 
             //wyswietlenie menu
 
-            user.showMenu();
+            //user.showMenu();
             switch (mainChoice){
 
             }

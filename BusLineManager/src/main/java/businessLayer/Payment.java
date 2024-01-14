@@ -6,8 +6,6 @@ public class Payment extends StandardObject{
     private String accountNumber;
     private String paymentState;
 
-
-
     private double price;
     public Payment(String accountNumber){
         super();

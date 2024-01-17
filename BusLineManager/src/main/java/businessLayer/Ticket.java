@@ -21,7 +21,7 @@ public class Ticket extends StandardObject{
     }
 
     boolean isValid(){
-        return LocalDateTime.now().isAfter(super.getTimeCreated());
+        return this.expirationDate.isAfter(super.getTimeCreated());
     }
 
     public String getStatus() {

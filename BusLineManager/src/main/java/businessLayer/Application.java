@@ -72,9 +72,9 @@ public class Application {
     public static List<BusLine> getBusLines(){
         return busLines;
     }
-    public static void deleteBusLine(int lineID){
+    public static void deleteBusLine(int lineNumber){
         busLines.remove(busLines.stream()
-                .filter(busLine -> lineID == busLine.getID())
+                .filter(busLine -> lineNumber == busLine.getLineNumber())
                 .findAny()
                 .orElse(null)
         );

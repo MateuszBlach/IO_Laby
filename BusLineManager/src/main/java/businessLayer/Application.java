@@ -82,7 +82,7 @@ public class Application {
     public static void updateLine(BusLine line){
         //TODO
     }
-    public static void updateTicketPrice(int lineNumber, double newPrice){
+    public static void updateTicketPrice(int lineNumber, double newPrice) {
         busLines.stream()
                 .filter(busline -> lineNumber == busline.getLineNumber())
                 .findAny()

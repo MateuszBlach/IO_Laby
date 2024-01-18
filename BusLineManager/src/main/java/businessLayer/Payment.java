@@ -27,6 +27,9 @@ public class Payment extends StandardObject{
     }
 
     public void setPaymentState(String paymentState) {
+        if (!"paid".equals(paymentState) && !"unpaid".equals(paymentState) && !"processing".equals(paymentState)) {
+            throw new IllegalArgumentException("Nieprawidłowy stan płatności: " + paymentState);
+        }
         this.paymentState = paymentState;
     }
 
@@ -35,8 +38,12 @@ public class Payment extends StandardObject{
     }
 
     public void setPrice(double price) {
+        if (price < 0) {
+            throw new IllegalArgumentException("Cena nie może być ujemna: " + price);
+        }
         this.price = price;
     }
+
 
     public void pay(){
         this.paymentState = "paid";
